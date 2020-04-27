@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Burger Mart</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <div class="logo mr-auto">
+        <h1 class="text-light"><a href="index.html">
+            <span style="font-family: cursive;">Burger Mart</span>
+            <img src="assets/burger/burgerMart_icon.png" class="img-fluid" alt=""></a>
+        </h1>
+      </div>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="#header">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#vision">Our Vision</a></li>
+          <li><a href="#food">Our Food</a></li>
+          <li class="drop-down"><a href="#menu">Menu</a>
+            <ul>
+              <li><a href="#menu" onclick="selectedMenuItem('VEGETARIAN')">VEGETARIAN</a></li>
+              <li><a href="#menu" onclick="selectedMenuItem('CHICKEN')">CHICKEN</a></li>
+              <li><a href="#menu" onclick="selectedMenuItem('WHOPPER')">WHOPPER</a></li>
+              <li><a href="#menu" onclick="selectedMenuItem('SIDES')">SIDES</a></li>
+              <li><a href="#menu" onclick="selectedMenuItem('DESSERTS')">DESSERTS</a></li>
+              <li><a href="#menu" onclick="selectedMenuItem('DRINKS')">DRINKS</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+
+          <li class="get-started">
+            <a href="login.html" id="loginAnchor"><i class="bx bx-lock-open bx-tada pr-1" style="font-size: 18px;"></i> Login</a>
+            <a href="#" id="userAnchor"></a>
+          </li>
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="owl-carousel burger-offer-carousel" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-12 order-2 order-lg-1 d-flex justify-content-center">
+            <div class="col-lg-6 pt-5 pt-lg-0 ">
+              <h1 data-aos="fade-up"><span><span
+                    style="animation: priceAnimation 10s infinite;"><sup>$</sup>12.99</span> BM-Chicken Burger</h1>
+              <h2 data-aos="fade-up" data-aos-delay="400">Today only get your BM-Chicken Burger for
+                <strike>$15.99</strike> $12.99 </h2>
+              <div data-aos="fade-up" data-aos-delay="800">
+                <a href="" class="btn-get-started scrollto">Order Now</a>
+              </div>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
+              <img src="assets/burger/mcdonald-s-mcchicken-burger.png" class="img-fluid animated" alt="">
+            </div>
+          </div>
+          <div class="col-12 order-2 order-lg-1 d-flex justify-content-center">
+            <div class="col-lg-6 pt-5 pt-lg-0 ">
+              <h1 data-aos="fade-up"><span><span
+                    style="animation: priceAnimation 10s infinite;"><sup>$</sup>15.99</span> BM-Chicken Burger Meals
+              </h1>
+              <h2 data-aos="fade-up" data-aos-delay="400">Today only get your BM-Chicken Burger Meal for
+                <strike>$19.99</strike> $15.99 </h2>
+              <div data-aos="fade-up" data-aos-delay="800">
+                <a href="" class="btn-get-started scrollto">Order Now</a>
+              </div>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
+              <img src="assets/burger/food-burger-fries.png" class="img-fluid animated" alt="">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+  <main id="main">
+
+    <!-- ======= Clients Section ======= -->
+    <section id="clients" class="clients clients">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-2 col-md-4 col-6 menuListBar">
+            <a href="#menu" onclick="selectedMenuItem('VEGETARIAN')" data-aos="zoom-in"
+              style="color:#62a70f">VEGETARIAN</a>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 menuListBar">
+            <a href="#menu" onclick="selectedMenuItem('CHICKEN')" data-aos="zoom-in" style="color:#ed7800"
+              data-aos-delay="100">CHICKEN</a>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 menuListBar">
+            <a href="#menu" onclick="selectedMenuItem('WHOPPER')" data-aos="zoom-in" style="color:#8b542f"
+              data-aos-delay="200">WHOPPER</a>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 menuListBar">
+            <a href="#menu" onclick="selectedMenuItem('SIDES')" data-aos="zoom-in" style="color:#EA6E00"
+              data-aos-delay="300">SIDES</a>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 menuListBar">
+            <a href="#menu" onclick="selectedMenuItem('DESSERTS')" data-aos="zoom-in" style="color:#0071ce"
+              data-aos-delay="400">DESSERTS</a>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 menuListBar">
+            <a href="#menu" onclick="selectedMenuItem('DRINKS')" data-aos="zoom-in" style="color:#DD231B"
+              data-aos-delay="500">DRINKS</a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- End Clients Section -->
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>About Us</h2>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
+            <p>
+              At Burger Mart, great burgers are key. Our namesake smashing technique—smashing a fresh, never frozen,
+              100% Certified Angus Beef® hand-packed ball of meat on a hot seasoned grill—results in a delicious burger
+              that stands alone in taste, texture, and juiciness. Add butter-toasted artisan buns, real cheeses, freshly
+              chopped produce, and robust sauces, and you’ve got a burger with no comparison!
+            </p>
+            <p>Our recipes range from traditional to food-forward, with modern takes for those looking to discover new
+              burger tastes. Our menu variety continues with chicken two ways (grilled and crispy) and black bean
+              burgers as alternatives to 100% Certified Angus Beef®. We even offer entrée salads!</p>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="300">
+            <p>
+              Our array of savory sides, including our signature rosemary, garlic & olive oil SmashFries®, hand-spun
+              milkshakes made with Häagen-Dazs® ice cream, ice cold Coca-Cola® fountain beverages, and a variety of
+              bottled beers (at most locations) round out the menu to make Burger Mart a perfect choice for any
+              occasion.
+            </p>
+            <!-- <a href="#" class="btn-learn-more">Learn More</a> -->
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= Counts Section ======= -->
+    <section id="vision" class="counts">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>Our Vision</h2>
+        </div>
+        <div class="row">
+          <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-xl-start"
+            data-aos="fade-right" data-aos-delay="150">
+            <img id="ourVisionImage" alt="" class="img-fluid">
+          </div>
+
+          <div class="col-xl-7 d-flex align-items-stretch pt-4 pt-xl-0" data-aos="fade-left" data-aos-delay="300">
+            <div class="content d-flex flex-column justify-content-center">
+              <div class="row">
+                <p>
+                  We want to be the best burger restaurant for the next generation of burger lovers. Delivering this
+                  requires everything the Burger Mart brand stands for: the highest quality ingredients; an exceptional
+                  “smashing” culinary technique; modern, inspired curated recipes; and menu variety that satisfies
+                  virtually all occasions and situations.
+
+                  From our fresh, never frozen 100% Certified Angus Beef® that’s smashed, seasoned, and seared on the
+                  grill to our butter-toasted artisan buns and quality cheeses, toppings, and sauces, the delicious
+                  taste of a Burger Mart defines what a great burger should be… and you are one bite away from
+                  believing!
+
+                  Add our variety of chicken, turkey, or black bean entrées, salads, signature sides, hand-spun shakes
+                  made with Häagen-Dazs® ice cream, and our convenient service and restaurant-quality presentations, we
+                  are confident Burger Mart will be the burger restaurant of the future.
+                </p>
+              </div>
+            </div><!-- End .content-->
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Counts Section -->
+
+    <!-- ======= Counts Section ======= -->
+    <section id="food" class="counts">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>Our Food</h2>
+        </div>
+        <div class="row">
+
+          <div class="col-xl-8 d-flex align-items-stretch pt-4 pt-xl-0" data-aos="fade-right" data-aos-delay="150">
+            <div class="content d-flex flex-column justify-content-center">
+              <div class="row">
+                <p>
+                  We want to be the best burger restaurant for the next generation of burger lovers. Delivering this
+                  requires everything the Burger Mart brand stands for: the highest quality ingredients; an exceptional
+                  “smashing” culinary technique; modern, inspired curated recipes; and menu variety that satisfies
+                  virtually all occasions and situations.
+
+                  From our fresh, never frozen 100% Certified Angus Beef® that’s smashed, seasoned, and seared on the
+                  grill to our butter-toasted artisan buns and quality cheeses, toppings, and sauces, the delicious
+                  taste of a Burger Mart defines what a great burger should be… and you are one bite away from
+                  believing!
+
+                  Add our variety of chicken, turkey, or black bean entrées, salads, signature sides, hand-spun shakes
+                  made with Häagen-Dazs® ice cream, and our convenient service and restaurant-quality presentations, we
+                  are confident Burger Mart will be the burger restaurant of the future.
+                </p>
+              </div>
+            </div><!-- End .content-->
+          </div>
+          <div class="image col-xl-4 d-flex align-items-stretch justify-content-center justify-content-xl-start pl-4"
+            data-aos="fade-left" data-aos-delay="300">
+            <img id="ourFoodImage" alt="" class="img-fluid">
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Counts Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="menu" class="portfolio">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>MENU</h2>
+          <p>BIGGER, BETTER, BOLDER</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*">ALL</li>
+              <li data-filter=".filter-VEGETARIAN" class="filter-VEGETARIAN">VEGETARIAN</li>
+              <li data-filter=".filter-CHICKEN" class="filter-active filter-CHICKEN">CHICKEN</li>
+              <li data-filter=".filter-WHOPPER" class="filter-WHOPPER">WHOPPER</li>
+              <li data-filter=".filter-SIDES" class="filter-SIDES">SIDES</li>
+              <li data-filter=".filter-DESSERTS" class="filter-DESSERTS">DESSERTS</li>
+              <li data-filter=".filter-DRINKS" class="filter-DRINKS">DRINKS</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container" id="menuDivId" data-aos="fade-up" data-aos-delay="400">
+
+
+        </div>
+
+      </div>
+    </section>
+    <!-- End Portfolio Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Contact Us</h2>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="contact-about">
+              <h3 style="font-family: cursive;">Burger Mart
+                <img src="assets/burger/burgerMart_icon.png" class="img-fluid" alt="" style=" height: 50px;width: 50px;position: absolute;top: -15px;"></a>
+              </h3>
+              <p>Burger Mart will provide its customers with the opportunity to drive up and place their order of well-prepared burgers and sandwiches of different flavours and toppings. We also plan to offer our clients well blended lemonade, coffees, teas, and other custom drinks to go down with our unique burger and sandwiches. We will also offer soft drinks, fresh-baked pastries and other confections.</p>
+              <div class="social-links">
+                <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
+                <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
+                <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="icofont-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
+            <div class="info">
+              <div>
+                <i class="ri-map-pin-line"></i>
+                <p>301 Fremont St<br>Las Vegas, NV 89101,</p>
+              </div>
+
+              <div>
+                <i class="ri-mail-send-line"></i>
+                <p>support@burgermart.com</p>
+              </div>
+
+              <div>
+                <i class="ri-phone-line"></i>
+                <p>+1 5589 55488 55s</p>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
+            <form class="php-email-form">
+              <div class="form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                  data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
+                  data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                  data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" data-rule="required"
+                  data-msg="Please write something for us" placeholder="Message"></textarea>
+                <div class="validate"></div>
+              </div>
+              <div class="mb-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row d-flex align-items-center">
+        <div class="col-lg-6 text-lg-left text-center">
+          <div class="copyright">
+            &copy; Copyright <strong>Burger Mart</strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+          Designed by <a href="">Abhilash</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+            <a href="#intro" class="scrollto">Home</a>
+            <a href="#about" class="scrollto">About</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/vendor/counterup/counterup.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

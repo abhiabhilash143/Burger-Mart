@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Burger Mart</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+<style>
+
+body, html {
+	height: 100%;
+	font-family: sans-serif;
+}
+a {
+	font-size: 14px;
+	line-height: 1.7;
+	color: #666666;
+	margin: 0px;
+	transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+}
+
+a:focus {
+	outline: none !important;
+}
+
+a:hover {
+	text-decoration: none;
+  color: #a64bf4;
+}
+
+/*---------------------------------------------*/
+h1,h2,h3,h4,h5,h6 {
+	margin: 0px;
+}
+
+p {
+	font-size: 14px;
+	line-height: 1.7;
+	color: #666666;
+	margin: 0px;
+}
+
+ul, li {
+	margin: 0px;
+	list-style-type: none;
+}
+
+
+/*---------------------------------------------*/
+input {
+	outline: none;
+	border: none;
+}
+
+textarea {
+  outline: none;
+  border: none;
+}
+
+textarea:focus, input:focus {
+  border-color: transparent !important;
+}
+
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; }
+input:focus::-moz-placeholder { color:transparent; }
+input:focus:-ms-input-placeholder { color:transparent; }
+
+textarea:focus::-webkit-input-placeholder { color:transparent; }
+textarea:focus:-moz-placeholder { color:transparent; }
+textarea:focus::-moz-placeholder { color:transparent; }
+textarea:focus:-ms-input-placeholder { color:transparent; }
+
+input::-webkit-input-placeholder { color: #adadad;}
+input:-moz-placeholder { color: #adadad;}
+input::-moz-placeholder { color: #adadad;}
+input:-ms-input-placeholder { color: #adadad;}
+
+textarea::-webkit-input-placeholder { color: #adadad;}
+textarea:-moz-placeholder { color: #adadad;}
+textarea::-moz-placeholder { color: #adadad;}
+textarea:-ms-input-placeholder { color: #adadad;}
+
+/*---------------------------------------------*/
+button {
+	outline: none !important;
+	border: none;
+	background: transparent;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+iframe {
+	border: none !important;
+}
+
+.login-body {
+	width: 100%;
+	margin: 0 auto;
+}
+.login-wrap{
+	width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.wrap-container {
+	width: 500px;
+	box-shadow: 0px 5px 25px lightgrey;
+    padding: 55px;
+}
+.login-text {
+	display: block;
+    font-size: 40px;
+    color: #333333;
+    line-height: 1.2;
+    text-align: center;
+	padding-bottom: 50px;
+	line-height: 1.2;
+}
+.wrap-input-div{
+	margin-bottom: 20px;
+	position: relative;
+	border-bottom: 2px solid #d9d9d9;
+    margin-left: 8px;
+}
+.wrap-label{
+	font-size: 15px;
+	padding-left: 5px;
+}
+.wrap-userIcon{
+	position: relative;
+	top: 8px;
+	font-size: 25px;
+	margin-left: 10px;
+}
+.wrap-input{
+    font-size: 16px;
+    color: #333333;
+    height: 50px;
+    background: transparent;
+}
+.wrap-input{
+    font-size: 16px;
+    color: #333333;
+    height: 50px;
+    background: transparent;
+}
+.userIcon-blue{
+	color: dodgerblue;
+}
+.wrap-login-button{
+	 position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+	box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
+}
+.login-transition{
+	position: absolute;
+    z-index: -1;
+    width: 300%;
+    height: 100%;
+	background: -webkit-linear-gradient(right, #00dbde, #fc00ff, #00dbde, #fc00ff);
+    left: -100%;
+    transition: all 0.4s;
+}
+.login-button{
+    color: #fff;
+    text-transform: uppercase;	
+    width: 100%;
+    height: 50px;
+}
+.wrap-login-button:hover .login-transition{
+  left: 0;
+}
+.social-media-div{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.solical-media-link{
+	font-size: 25px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 5px;
+}
+.facebook-link{
+	background-color: #3b5998;
+}
+.google-link{
+	background-color: #ea4335;
+}
+.signup-div{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.error-icon-div {
+	color: #c80000;
+    font-size: 15px;
+    position: relative;
+    top: 15px;
+    right: 115px;
+    white-space: nowrap;
+}
+.error-icon-text {
+	
+    border: 1px solid #c80000;
+    padding: 3px 10px;
+    font-size: 12px;
+    border-radius: 15px;
+}
+.error-icon-div {
+	display: none;
+}
+</style>
+</head>
+<body>
+<div class="login-body">
+		<div class="login-wrap" >
+			<div class="wrap-container">
+				<form style="width: 100%;">
+					<span class="login-text">
+						Login
+					</span>
+
+					<div class="wrap-input-div row col-12 p-0">
+						<span class="wrap-label col-12">User Email</span>
+						<div class="wrap-userIcon col-1 p-0" >
+    						<i class="fa fa-user"></i>
+						</div>
+						<input class="wrap-input col-9 p-0" type="text" id="userEmail" onclick="onClickOnInput(this)" onblur="onBlurOfInput(this)" placeholder="Type your Email">
+						<div class="error-icon-div col-1 p-0" >
+   						 <span class="error-icon-text" >Please enter valid Email <i class="fa fa-exclamation-circle pl-2"></i></span>
+    						<!-- <i class="fa fa-exclamation-circle error-exclamation"></i> -->
+						</div>
+					</div>
+
+					<div class="wrap-input-div row col-12 p-0">
+						<span class="wrap-label col-12">Password</span>
+						<div class="wrap-userIcon col-1 p-0" >
+    						<i class="fa fa-unlock-alt"></i>
+						</div>
+						<input class="wrap-input col-8 p-0" type="password" id="password" onclick="onClickOnInput(this)" onblur="onBlurOfInput(this)" placeholder="Password">
+						<div class="error-icon-div col-1 p-0 pl-3" >
+   						 <span class="error-icon-text" >Please enter the password <i class="fa fa-exclamation-circle pl-2"></i></span>
+    						<!-- <i class="fa fa-exclamation-circle error-exclamation"></i> -->
+						</div>
+					</div>
+					
+					<div class="text-right pt-1 pb-4" id="forgotPassword">
+						<a href="#">
+							Forgot password?
+						</a>
+					</div>
+					
+					<div class="wrap-login-button" id="loginButton">
+							<div class="login-transition"></div>
+							<button type="button" class="login-button" onclick="loginToApp()">
+								Login
+							</button>
+						</div>
+
+						<div class="wrap-login-button" id="signupButton" style="display: none;">
+							<div class="login-transition"></div>
+							<button type="button" class="login-button" onclick="signup()">
+								Sign Up
+							</button>
+						</div>
+
+					<div class="text-center pt-5 pb-2">
+						<span>
+							Or Sign Up Using							
+						</span>
+					</div>
+
+					<div class="social-media-div">
+						<a href="#" class="solical-media-link facebook-link" onclick="checkLoginState()">
+							<i class="fa fa-facebook"></i>
+						</a>
+						
+						<a href="#" class="solical-media-link google-link">
+							<i class="fa fa-google"></i>
+						</a>
+					</div>
+
+					<div class="signup-div" id="signupText">
+						<a href="#" onclick="showSignup()" class="pt-3">
+							Sign Up
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	
+<!--===============================================================================================-->
+	<script src="assets/vendor/jquery/jquery.min.js"></script>
+<!--===============================================================================================-->
+	<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!--===============================================================================================-->
+	<script src="assets/js/login.js"></script>
+	
+
+</body>
+</html>
